@@ -59,7 +59,7 @@ class MarketDepthEvent():
         count += 8
         lastTradedTime = reader.read_int64()
         count += 8
-        percentChange = reader.read_uint64()
+        percentChange = struct.unpack('d', reader.read_bytes(8))[0]
         count += 8
         open = struct.unpack('d', reader.read_bytes(8))[0]
         count += 8
