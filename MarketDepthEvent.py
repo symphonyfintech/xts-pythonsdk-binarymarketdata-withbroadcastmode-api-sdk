@@ -9,7 +9,7 @@ class MarketDepthEvent():
         messageVersion = reader.read_uint16()
         applicationType = reader.read_uint16()
         tokenID = reader.read_uint64()
-        count += 8
+        count += 12
         if messageVersion >= ApplicationMessageVersion.Version_1_0_1_2983.value:
             sequenceNumber = reader.read_uint64()
             count += 8
