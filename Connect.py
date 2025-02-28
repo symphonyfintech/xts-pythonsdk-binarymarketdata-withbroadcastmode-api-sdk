@@ -78,8 +78,6 @@ class XTSConnect(XTSCommon):
                  apiKey,
                  secretKey,
                  source,
-                 userID,
-                 password,
                  root=None,
                  debug=False,
                  timeout=None,
@@ -110,8 +108,8 @@ class XTSConnect(XTSCommon):
         self.disable_ssl = disable_ssl
         self.root = root or self._default_root_uri
         self.timeout = timeout or self._default_timeout
-        self.password = password
-        self.userID= userID
+        self.password = ""
+        self.userID= ""
         super().__init__()
 
         # Create requests session only if pool exists. Reuse session
